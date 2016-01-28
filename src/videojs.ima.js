@@ -558,18 +558,22 @@
         fullscreenDiv.className = 'ima-fullscreen';
         adContainerDiv.style.width = window.screen.width + 'px';
         adContainerDiv.style.height = window.screen.height + 'px';
-        adsManager.resize(
-            window.screen.width,
-            window.screen.height,
-            google.ima.ViewMode.FULLSCREEN);
+        if (adsManager) {
+          adsManager.resize(
+              window.screen.width,
+              window.screen.height,
+              google.ima.ViewMode.FULLSCREEN);
+        }
       } else {
         fullscreenDiv.className = 'ima-non-fullscreen';
         adContainerDiv.style.width = player.ima.width() + 'px';
         adContainerDiv.style.height = player.ima.height() + 'px';
-        adsManager.resize(
-            player.ima.width(),
-            player.ima.height(),
-            google.ima.ViewMode.NORMAL);
+        if (adsManager) {
+          adsManager.resize(
+              player.ima.width(),
+              player.ima.height(),
+              google.ima.ViewMode.NORMAL);
+        }
       }
     };
 
