@@ -43,12 +43,12 @@
   imaPlugin = function(options, readyCallback) {
     var player = this;
 
-    playerStyles = getComputedStyle(player.el())
+    var playerStyles = getComputedStyle(player.el())
     player.ima.width = function() {
-      return playerStyles.width;
+      return parseInt(playerStyles.width, 10);
     }
     player.ima.height = function() {
-      return playerStyles.height;
+      return parseInt(playerStyles.height, 10);
     }
 
     /**
